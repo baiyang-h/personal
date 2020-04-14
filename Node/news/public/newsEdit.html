@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news</title>
+    <link rel="stylesheet" href="../static/base.css">
+    <style>
+        main form div {
+            margin-bottom: 20px;
+        }
+        .content {
+            display: table;
+        }
+        .content label {
+            display: table-cell;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <ul>
+                <li><a href="/index">首页</a></li>
+                <li><a href="/list">新闻列表</a></li>
+                <li><a href="/edit">编辑新闻</a></li>
+            </ul>
+        </header>
+        <main>
+            <form action="/submitnews" method="get">
+                <div>
+                    <label for="title">新闻标题</label>
+                    <input type="text" id="title" name="title" value="" placeholder="请输入新闻标题">
+                </div>
+                <div class="content">
+                    <label for="content">新闻内容</label>
+                    <textarea name="content" id="content" cols="30" rows="10" placeholder="请输入新闻内容"></textarea>
+                </div>
+                <input type="submit">
+            </form>
+        </main>
+    </div>
+</body>
+</html>

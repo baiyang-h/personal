@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <style>
+        .nav {
+            margin-bottom: 20px;
+        }
+        .custom-select {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+        .form-control-file {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/downloadshow">下载展示</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/up">上传</a>
+        </li>
+    </ul>
+    <form action="/up" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <select class="custom-select" name="selectFile">
+                <% for(var i=0; i<albums.length; i++) { %>
+                    <option value="<%= albums[i] %>"><%= albums[i] %></option>
+                <% } %>
+            </select>
+            <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

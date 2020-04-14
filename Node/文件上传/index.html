@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="file">
+    <button>click</button>
+    <script>
+        let file = document.getElementById("file");
+        let btn = document.querySelector('button');
+        btn.onclick = function () {
+            let formdata = new FormData();
+            formdata.append('name', 'zhangsan');
+            formdata.append('age', 24);
+            formdata.append('file', file.files[0]);
+            let xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://127.0.0.1:9000/form', true);
+            xhr.setRequestHeader('Content-Type', 'multipart/form-data;charset=utf-8')
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+            xhr.send(formdata);
+        }
+    </script>
+</body>
+
+</html>
