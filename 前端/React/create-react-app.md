@@ -58,13 +58,13 @@ yarn create react-app my-app
 
    我们可以看到隐藏的配置文件了。
 
-#### react-scripts
+注意：在执行`npm eun eject`有时会报错，是因为项目的文件结构和规定的有所区别，根据提示删除不必要的，或者**记得如果没有`.gitignore`要加上这个文件**。
 
-`react-scripts`是`create-react-app`生成项目所有的依赖。
+`react-scripts`是 create-react-app 生成项目所有的依赖。
 
-通常情况下，我们创建`spa`应用时是使用`npm`安装项目依赖，在通过配置`webpack.config.js`进行配置，搭建好环境后在`src`编写源代码。而`create-react-app`是自动构建，在`package.json`中只有`react-scripts`作为依赖，而在`reacr-scripts`中已经配置好了项目所有需要的。
+通常情况下，我们创建spa应用时是使用npm安装项目依赖，在通过配置 webpack.config.js 进行配置，搭建好环境后在src编写源代码。而 create-react-app 是自动构建，在 package.json 中只有 `react-scripts`作为依赖，而在`reacr-scripts`中已经配置好了项目所有需要的。
 
-从`react，es6，babel,webpack`编辑到打包，`react-scripts`都做了。
+从react，es6，babel,webpack编辑到打包，`react-scripts`都做了。
 
 
 

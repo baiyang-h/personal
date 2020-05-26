@@ -449,7 +449,7 @@ function User({match}) {
 使用`render`可以方便地进行内联渲染和包装，而且不会产生上文说的重复装载问题。
 
 ```jsx
-<Route path="/a" render={props} => <A {...props} {...otherProps} /> />
+<Route path="/a" render={props => <A {...props} {...otherProps} /> />
 ```
 
 > 警告：<Route component>优先于<Route render>，因此不要在同一个<Route>中同时使用两者。
